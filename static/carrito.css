@@ -1,0 +1,67 @@
+/*contenedor del carrito*/
+#carrito {
+    /*convierte el contenedor en flex container, permitiendo organizar los elementos hijos de forma flexible*/
+    display: flex;
+    /*los organiza verticalmente osea uno debajo del otro*/
+    flex-direction: column;
+    /*agrega un espacio, 14 pixeles entre cada elemento hijo*/
+    gap: 14px;
+    margin-top: 20px;
+}
+
+/*item carrito lo crea js dinamicamente para mostrar los elementos del carrito*/
+.carrito {
+    background: white;
+    padding: 14px 18px;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: 0.3 ease;
+}
+
+.carrito:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.carrito strong {
+    font-size: 1rem;
+    color: #111;
+}
+
+.carrito span {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.carrito .btn-eliminar {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2 ease;
+}
+
+.carrito .btn-eliminar:hover {
+    background: #dc2626;
+    /*aumenta el elemento un 5% 1 - tamaño normal, 0.5 ligeramente mas grande*/
+    transform: scale(1.05);
+}
+
+h3 {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+#total {
+    font-weight: bold;
+    color: #4f46e5;
+}

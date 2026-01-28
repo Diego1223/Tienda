@@ -1,0 +1,119 @@
+body {
+    font-family: sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+}
+
+.product-container {
+    /*activar flexbox, permite colocar los hijos 
+    (imagen + informacion) uno al lado del otro*/
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+    /*altura dinamica del contenedor
+    100vh - altura total de la ventana
+    -100px espacio reservado para el navbar
+    Asi el contenido no queda oculto debajo del navbar, el layout ocupa
+    el resto de la pantalla*/
+    height: calc(100vh - 100px);
+    /*centra el contenedor horizontal
+    0 sin margen arriba y abajo auto - reparte espacio a izquierda y derecha*/
+    margin: 0 auto; /* centra horizontalmente */
+    /*hacen que el padding y borde no aumenten el tamaño total*/
+    box-sizing: border-box;
+    animation: fadeUp .6s ease;
+
+}
+
+
+.imagen {
+    width: 40%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen img {
+    width: 80%;
+    /*limita la altura de la imagen, nunca sera mas alto que 80%*/
+    max-height: 60vh;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.informacion {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacion h1 {
+    font-size: h1;
+    margin-bottom: 20px;
+}
+
+.etiquetas {
+    margin-bottom: 18px;
+}
+
+.etiqueta {
+    /*borrar los estilos predeterminados del navegador*/
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    background: #eee;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.etiqueta:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.etiqueta.highlight {
+    background-color: #322bc0;
+    color: #fff;
+}
+
+.descripcion {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.agregar {
+    width: fit-content;
+    padding: 16px 40px;
+    font-size: 18px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.agregar:hover {
+  background-color: #219150;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

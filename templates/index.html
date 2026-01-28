@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+<h1>Productos</h1>
+<div id="productos" class="grid"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

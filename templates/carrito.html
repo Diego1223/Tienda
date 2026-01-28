@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='carrito.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>Carrito</h1>
+<div class="item-carrito" id="carrito"></div>
+<h3>Total: $<span id="total">0</span></h3>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='carrito.js') }}"></script>
+{% endblock %}
+

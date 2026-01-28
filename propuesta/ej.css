@@ -1,0 +1,25 @@
+.grid {
+    display: grid;
+    /*La primer columna se ajusta al contenido*/
+    grid-template-columns: auto 1fr;
+    gap: 40px; /*Espacio entre columnas*/
+    justify-content: center;  
+}
+
+.grid img {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
+
+.Descripcion h2 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.Descripcion p {
+    color: black;
+    margin-top: 2px;
+    line-height: 1.4;
+}

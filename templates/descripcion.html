@@ -1,0 +1,22 @@
+<!--Este archivo sirve para describir el producto, dentro de el vendra el boton de agregar al carrito-->
+{% extends "base.html" %}
+{% block title %} Descripcion {% endblock%}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='producto.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="descripcion_completa"></div>
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+    //Flask inyecta el producto aqui
+    //js lo usa para pedir el producto correcto
+    const PRODUCTO_ID = {{ producto_id }};
+</script>
+<script src="/static/carrito.js"></script>
+<script src="{{ url_for('static', filename='productos.js') }}"></script>
+{% endblock%}
+

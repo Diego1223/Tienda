@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Carniceria{% endblock %}</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block extra_css %}
+    {% endblock%}
+</head>
+<body>
+
+    <!-- NAVBAR (compartido) -->
+    <nav class="navbar">
+        <span class="Titulo">Productos</span>
+
+        <ul class="nav-links">
+            <li><a href="/">Productos</a></li>
+            <li>
+                <a href="/carrito">
+                    Carrito 
+                    <span id="contador-carrito">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO QUE CAMBIA -->
+    <main class="contenido">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- JS ESPECÍFICO DE CADA PÁGINA -->
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

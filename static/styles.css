@@ -1,0 +1,167 @@
+body {
+    font-family: sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+}
+
+/*Todo esto es referente al navbar*/
+.navbar { 
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    padding: 15px 25px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255,255,255);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.Titulo {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.nav-links { 
+    list-style: none;
+    display: flex;
+    gap: 2rem; /*separacion entre si*/
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 500;
+    padding:  4px 0;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #4f46e5;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/*sin esto el contenido se pone arriba del navbar y lo que queremos es que el navbar sea fijo
+Todo esto ya empieza a ser referente a los productos*/
+.contenido {
+    margin-top: 120px;
+}
+
+
+.grid {
+    /* el grid funciona para crear un sistema de filas y columnas
+    Con esto el navegador llena la primera filam cuando ya no caben mas crea otra fila abajo*/
+    display: grid;
+    /*repeat repite columnas automaticamente, autofit el navegador decide cuantas columnas entran segun el ancho disponible
+    minmax minimo 300px, nunca sera mas pequeno que eso, maximo 1fr ocupa todo el espacio disponible*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;                /* separación entre tarjetas */
+    justify-items: center;    /* centra cada tarjeta */
+}
+
+
+.producto {
+    width: 300px;
+    max-width: 300px;
+    height: 180px;
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    /*0 - sin desplazamiento vertical, 2px sombra hacia abajo, 4px difuminado, rgba sombra ligera*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: .3s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeUp .6s ease;
+
+}
+
+
+.producto strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    color: rgba(61, 59, 59, 0.7);
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+/*Es una etiqueta a agarrada de JS (app.js)*/
+.producto .descripcion-a {
+    /*sin esto, los botones no quedan parejos*/
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+
+    font-weight: 600;
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.producto .descripcion-a:hover {
+    background: #3740a3;
+    transform: translateY(-2px);
+}
+
+.producto {
+    font-weight: 550;
+    color: #374151;
+}
+
+
+.producto:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+#contador-carrito {
+    background: #4f46e5;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+}
+
+/*transicion al iniciar la pagina web del grid (productos)*/
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
