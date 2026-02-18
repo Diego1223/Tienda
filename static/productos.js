@@ -34,6 +34,7 @@ async function cargarDetalles() {
         </div>
     </div>
         `;
+    inicializarEtiquetas();
 
     document.getElementById("btn-agregar").addEventListener("click", () => {
         const kilos = parseFloat(document.getElementById("kilos").value);
@@ -46,6 +47,36 @@ async function cargarDetalles() {
         agregarProductoAlCarrito(data, kilos);
         actualizarContador();
         alert("Producto agregado al carrito");
+    });
+
+}
+
+async function inicializarEtiquetas() {
+    const response = await fetch(`/api/producto_cmp/${PRODUCTO_ID}`);
+    const data = await response.json();
+
+    const brangus = document.getElementById("Brangus");
+    const parrilla = document.getElementById("parrilla");
+    const rancho17 = document.getElementById("rancho17");
+
+    const botones = [parrilla, brangus, rancho17];
+
+    function activarBoton(botonActivo, texto) {
+        botones.forEach(boton => boton.classList.remove("highlight"));
+        botonActivo.classList.add("highlight");
+        descripcion.textContent = texto;
+    }
+
+    parrilla.addEventListener("click", () => {
+        activarBoton(parrilla, data.parrilla);
+    });
+
+    brangus.addEventListener("click", () => {
+        activarBoton(brangus, "El ganado Brangus es una raza bovina híbrida de carne desarrollada para combinar lo mejor de dos razas: Angus (conocida por la calidad de su carne) y Brahman (conocida por su resistencia y adaptabilidad).  Produce carne tierna, con buen marmoleado y jugosidad, gracias a la influencia del Angus. Cabe desta Las vacas suelen ser buenas madres, con partos relativamente fáciles y buena producción de leche para sus terneros.");
+    });
+
+    rancho17.addEventListener("click", () => {
+        activarBoton(rancho17,data.descripcion_larga);
     });
 
 }

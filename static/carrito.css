@@ -7,18 +7,22 @@
     /*agrega un espacio, 14 pixeles entre cada elemento hijo*/
     gap: 14px;
     margin-top: 20px;
+  animation: fadeUp .6s ease;
 }
 
+.contenido {
+    animation: fadeUp .6s ease;
+}
 /*item carrito lo crea js dinamicamente para mostrar los elementos del carrito*/
 .carrito {
     background: white;
     padding: 14px 18px;
     border-radius: 14px;
-
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     transition: 0.3 ease;
 }
@@ -61,7 +65,39 @@ h3 {
     font-size: 1.2rem;
 }
 
+#btn-pagar {
+    text-decoration: none;
+    display: block;       /* convierte el botón en bloque */
+    margin-left: auto;    
+    margin-right: 10px;
+    width: 40px; 
+    background: #28a745;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2 ease;
+}
+
+#btn-pagar:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
 #total {
     font-weight: bold;
     color: #4f46e5;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

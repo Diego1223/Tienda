@@ -67,3 +67,7 @@ function eliminarProducto(id) {
     renderCarrito();
     actualizarContador();
 }
+
+function pagar() {
+    
+}

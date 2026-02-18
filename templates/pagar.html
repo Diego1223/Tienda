@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación de Pagos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Verificación de Pago</h1>
+
+    <div class="card">
+        <label for="paymentId">ID de Pago</label>
+        <input type="text" id="paymentId" placeholder="Ej: PAY12345">
+        <button onclick="verificarPago()">Verificar</button>
+    </div>
+
+    <div id="resultado" class="resultado oculto">
+        <h2>Resultado</h2>
+        <p><strong>Usuario:</strong> <span id="usuario"></span></p>
+        <p><strong>Monto:</strong> $<span id="monto"></span></p>
+        <p><strong>Estado:</strong> <span id="estado"></span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

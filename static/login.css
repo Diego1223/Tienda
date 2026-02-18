@@ -1,0 +1,120 @@
+body {
+
+    font-family: sans-serif;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-card {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: .3s ease;
+    cursor: pointer;
+    transform: translateY(0) scale(1);
+
+    animation: fadeUp .6s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.login-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 1.4rem;
+}
+.field input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: #f3f4f6;
+    /*el box sizing border box ajusta el contenido internamente*/
+    box-sizing: border-box; 
+}
+
+/*Hacer el input:focus
+se activa cuando haces clic o escribes en el input*/
+.field input:focus {
+    /*offset-x offset-y blur spread color inset
+    offset x positivo derecha / negativo izquierda
+    offset y positivo abajo negativo arriba
+    4px blur desenfoque suave
+    y el rgba negro con 10% opacidad*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.field label {
+    /*position absolute situa el label sobre el input*/
+    position: absolute;
+    /*el top le dice al navegador coloca la parte superior del label al 50% de la altura del contenedor padre*/
+    top: 50%;
+    /*mueve la etiqueta hacia la derecha 14px desde el borde izquierdo para que no se vea tan pegado*/
+    left: 14px;
+    /*la etiqueta se centra verticalmente dentro del input osea es para que quede al medio del input*/
+    transform: translateY(-50%);
+    font-size: .85rem;
+    color: rgba(61, 59, 59, 0.7);
+    pointer-events: none;
+    /*animacion suave cuando cambia de posicion, tamano o color*/
+    transition: .25s ease;
+}
+
+/*cuando el input tiene foco (focus) osea lo estan presionando y 
+valid es que tiene contenido valido
+el + label significa afecta al label que esta justo despues del input*/
+.field input:focus + label, 
+.field input:valid + label {
+    /*Mueve la etiqueta arriba del input*/
+    top: -8px;
+    font-size: .8rem;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+button:hover {
+    background: #3740a3;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

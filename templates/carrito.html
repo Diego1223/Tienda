@@ -7,9 +7,12 @@
 {% endblock %}
 
 {% block content %}
-<h1>Carrito</h1>
-<div class="item-carrito" id="carrito"></div>
-<h3>Total: $<span id="total">0</span></h3>
+<div id="contenido">
+    <h1>Carrito</h1>
+    <div class="item-carrito" id="carrito"></div>
+    <h3>Total: $<span id="total">0</span></h3>
+    <a id="btn-pagar" href="/pagar">Pagar</a>
+</div>
 {% endblock %}
 
 {% block extra_js %}

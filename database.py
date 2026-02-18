@@ -8,6 +8,5 @@ CONFIG = {
     "auth_plugin": "mysql_native_password"
 }
 
-
 def conexion():
     return mysql.connector.connect(**CONFIG)

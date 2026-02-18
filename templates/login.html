@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/login.css">
+</head> 
+<body>
+    <form class="login-card" onsubmit="iniciarSesion(event)">
+        <img src="static/img/logo.jpeg">
+        <h2>Iniciar Sesion</h2>
+        <div class="field">
+            <input type="text" id="correo" required>
+            <label>Correo</label>
+        </div>
+        <div class="field">
+            <input id="contrasena" type="password" required>
+            <label>Contraseña</label>
+        </div>
+        <button>Iniciar sesion</button>
+    </form>
+
+    <script src="static/sesion.js"></script>
+</body>
+</html>
